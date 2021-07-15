@@ -1,0 +1,273 @@
+$primary_accent: #1EACC7
+$secondary_accent: #Ef5350
+	
+@mixin button($width)
+	width: $width
+	height: 63px
+	background: linear-gradient(0deg, #1EACC7 0%, #4CE2FF 100%)
+	box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.12)
+	border-radius: 4px
+	font-weight: normal
+	font-size: 14px
+	text-transform: uppercase
+	color: #FFFFFF
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.21)
+
+@mixin title()
+	margin-top: 43px
+	font-weight: bold
+	font-size: 38px
+	line-height: 48px
+	color: #222222 
+	text-transform: uppercase
+	text-align: center
+*
+	font-family: 'Roboto', sans-serif
+
+nav
+	position: fixed
+	width: 100%
+	height: 53px
+	background: #212121
+	z-index: 999
+	
+	
+
+.nav-menu
+	display: flex
+	padding: 13px 70px
+	justify-content: space-between
+	list-style-type: none
+	input block
+	.item
+		border-right: 2px dotted black
+		padding-right: 30px
+		&:last-child
+			border-right: none
+			padding-right: 0px            
+
+	.link
+		color: white
+		font-size: 15px
+		font-weight: 300
+
+.subheader
+	position: absolute
+	width: 100%
+	height: 87px
+	margin-top: 53px
+	background: rgba(0, 0, 0, 0.6)
+	z-index: 998
+	&-logo
+		display: block
+		min-width: 100%
+		margin-top: 16px
+
+	&-official
+		margin-top: 6px
+		font-weight: 200
+		font-size: 13px
+		color: white
+
+	&-call
+		margin-top: 16px
+		text-align: right
+		font-weight: 300
+		font-size: 12px
+		color: #FFFFFF
+	&-phone
+		display: block
+		font-weight: normal
+		text-align: right
+		font-size: 22px
+		color: #FFFFFF
+
+	&-call-btn
+		margin-top: 12px
+		@include button(100%)
+		z-index: 155
+
+.promo
+   
+	left: 0
+	right: 0
+	padding-top: 53px
+	min-height: 800px
+	background: url("/src/img/uber_bg.png") center (center/cover) no-repeat
+   
+	&__everything
+		padding-top: 124px
+	&-text 
+		
+		text-align: center
+		color: #FFFFFF
+
+		h1
+		
+			font-weight: 900
+			font-size: 60px
+			text-transform: uppercase
+
+		h2
+			margin-top: -20px
+			text-transform: uppercase
+			font-weight: 700
+			font-size: 36px
+
+		.content
+			font-weight: normal
+			font-size: 18px
+			line-height: 24px
+			color: #FFFFFF
+
+	button
+		display: block
+		margin: 115px auto
+		@include button(259px)
+	
+.advantages
+	margin-top: 20px
+	min-height: 849px
+	position: relative
+	&__wrapper
+		
+		position: absolute
+		top: 105px
+	
+	&__title
+		margin: 0 auto
+	
+		width: 113px
+		height: 24px
+		font-weight: normal
+		font-size: 11px
+		mix-blend-mode: normal
+		text-transform: uppercase
+		display: flex
+		justify-content: center
+		align-items: center
+		color: #FFFFFF
+		background: #222222
+		border: none
+	h2
+		@include title()
+	
+	.advantage
+		position: relative
+		
+		margin-top: 39px
+
+		&__circle
+			display: flex
+			align-items: center
+			justify-content: center
+			position: absolute
+			
+			// top: 50%
+			// transform: translateY(-50%)
+			border-radius: 100%
+			width: 116px
+			height: 116px
+			background: #1EACC7
+			
+			&__descr
+				
+				margin-left: 140px
+				width: 395px
+				font-style: normal
+				font-weight: 300
+				font-size: 15px
+				line-height: 21px
+				font-weight: normal
+				font-size: 17px	
+				color: #202020
+				&__title
+					font-style: normal
+					font-weight: normal
+					font-size: 17px
+					color: #1EACC7	
+
+.opportunities
+	min-height: 864px
+	background: url("/src/img/mobile_bg.png") center (center/cover) no-repeat
+	padding-top: 48px
+	&__wrapper
+		
+
+		h2
+			@include title()
+		h3
+			
+			margin-top: 11px
+			font-style: normal
+			font-weight: normal
+			font-size: 17px
+			color: #222222
+			text-align: center
+		&__cards
+			
+			display: flex
+			width: 1140px
+			margin: 0 auto
+			margin-top: 8px
+			justify-content: space-around
+			flex-wrap: wrap
+		
+			&__card
+				position: relative
+				margin-top: 19px
+				
+				&__content
+					position: relative
+				
+					&__text
+						position: absolute
+						width: 100%
+						height: 100%
+						top: 70px
+						font-style: normal
+						font-weight: normal
+						font-size: 24px
+						text-transform: uppercase
+						text-align: center
+						color: #FFFFFF
+						
+						
+					&__plus
+						display: flex
+						position: absolute
+						width: 29px
+						height: 29px
+						bottom: 35px
+						left: 50%
+						transform: translateX(-50%)
+						align-items: center
+						justify-content: center
+						border-radius: 100%
+						
+						
+						background: #000000	
+						&:before
+							content: ""
+							width: 14px
+							height: 2px	
+							background: #1EACC7
+							transition: all 0.3s ease
+
+						&:after
+							position: absolute
+							content: ""
+							width: 2px
+							height: 14px	
+							background: #1EACC7
+							transition: all 0.3s ease
+						&:hover:before
+								background: $secondary_accent
+						&:hover:after
+								background: $secondary_accent
+					&__bg
+						width: 320px
+						height: 280px
+					
+					
+				
